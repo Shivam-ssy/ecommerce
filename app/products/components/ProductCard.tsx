@@ -14,7 +14,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-square overflow-hidden">
           <Image
-            src={product.imageUrl || "/placeholder.svg"}
+            src={product.imageUrl || "https://plus.unsplash.com/premium_photo-1661868906940-5d8443acf49e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"

@@ -75,7 +75,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative z-10">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
+                  src="https://images.unsplash.com/photo-1750086721456-28c384a8896b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Featured Products"
                   width={500}
                   height={600}
@@ -197,10 +197,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: "Electronics", image: "/placeholder.svg?height=200&width=200", count: "120+ items" },
-              { name: "Clothing", image: "/placeholder.svg?height=200&width=200", count: "200+ items" },
-              { name: "Home", image: "/placeholder.svg?height=200&width=200", count: "80+ items" },
-              { name: "Sports", image: "/placeholder.svg?height=200&width=200", count: "60+ items" },
+              { name: "Electronics", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", count: "120+ items" },
+              { name: "Clothing", image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", count: "200+ items" },
+              { name: "Home", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", count: "80+ items" },
+              { name: "Sports", image: "https://plus.unsplash.com/premium_photo-1661868906940-5d8443acf49e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", count: "60+ items" },
             ].map((category) => (
               <Link
                 key={category.name}
