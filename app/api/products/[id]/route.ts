@@ -2,9 +2,10 @@ import { type NextRequest, NextResponse } from "next/server"
 import { ProductsStore } from "@/lib/products-store"
 
 // GET /api/products/[id] - Fetch a single product
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const product = ProductsStore.getProductById(params.id)
+    const { id } = await params
+    const product = ProductsStore.getProductById(id)
 
     if (!product) {
       return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 })
@@ -21,9 +22,10 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE /api/products/[id] - Remove a product by ID
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const deleted = ProductsStore.deleteProduct(params.id)
+    const { id } = await params
+    const deleted = ProductsStore.deleteProduct(id)
 
     if (!deleted) {
       return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 })
@@ -40,8 +42,9 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
 }
 
 // PUT /api/products/[id] - Update a product
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params
     const body = await request.json()
 
     // Validate price if provided
@@ -49,7 +52,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ success: false, error: "Price must be a positive number" }, { status: 400 })
     }
 
-    const updatedProduct = ProductsStore.updateProduct(params.id, body)
+    const updatedProduct = ProductsStore.updateProduct(id, body)
 
     if (!updatedProduct) {
       return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 })
