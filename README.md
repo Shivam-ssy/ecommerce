@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Geer-Inspired E-commerce Platform 🛒
 
-First, run the development server:
+This is a full-stack e-commerce web application built as part of an internship assignment. The frontend is built using **Next.js with the App Router**, and backend APIs are implemented using **Next.js API Routes**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🧩 Tech Stack
+
+- **Frontend & Backend:** Next.js (App Router with API Routes)
+- **Styling:** Tailwind CSS / CSS Modules / Styled Components (adjust based on what you used)
+- **Data Storage:** In-memory array or local JSON file
+
+---
+
+## 📁 Folder Structure
+
+```
+geer-intern-assignment/
+├── app/                      # App Router-based pages
+│   ├── products/             # Product listing page
+│   └── products/[id]/        # Single product page (optional)
+├── pages/api/products/       # API routes for product management
+│   ├── index.js              # GET and POST handler
+│   └── [id].js               # DELETE handler
+├── components/               # Reusable components
+├── public/                   # Public assets like product images
+├── styles/                   # Styling files
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 How to Run the Project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📦 Prerequisites
 
-## Learn More
+- Node.js ≥ 18.x
+- npm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+### ▶️ Running the App
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+git clone https://github.com/your-username/geer-intern-assignment.git
+cd geer-intern-assignment
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then open your browser at:  
+`http://localhost:3000/products`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📌 Features Implemented
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Responsive Product Listing Page (`/products`)
+- Each product shows:
+  - Image
+  - Name
+  - Price
+- API Routes:
+  - `GET /api/products` – Fetch all products
+  - `POST /api/products` – Add a new product
+  - `DELETE /api/products/:id` – Delete a product by ID
+
+---
+
+## 💡 Bonus Features (if implemented)
+
+- Product search or filtering
+- Product details page at `/products/[id]`
+
+---
+
+## 📝 Notes & Assumptions
+
+- Product data is stored in memory; restarting the server resets the data.
+- App uses the App Router (`app/`) in Next.js 13+.
+- No authentication or user accounts are implemented.
+- Meant for demo and evaluation purposes.
+
+---
+
+## 👨‍💻 Author
+
+Shivam Singh Yadav  
+Internship Assignment – Full Stack Developer (Next.js)  
+Submitted via Internshala
