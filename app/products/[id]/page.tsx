@@ -8,11 +8,12 @@ import { Badge } from "@/components/ui/badge"
 import { ProductsStore } from "@/lib/products-store"
 
 interface ProductPageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: ProductPageProps) {
-  const product = ProductsStore.getProductById(params.id)
+  const { id } = await params
+  const product = ProductsStore.getProductById(id)
 
   if (!product) {
     return {
@@ -26,8 +27,9 @@ export async function generateMetadata({ params }: ProductPageProps) {
   }
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = ProductsStore.getProductById(params.id)
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params
+  const product = ProductsStore.getProductById(id)
 
   if (!product) {
     notFound()
